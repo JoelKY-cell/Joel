@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ControlHub - SaaS RFID & Biométrie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold-primary: #D4AF37;
+            --gold-light: #F9E79F;
+            --gold-dark: #B8860B;
+            --black-deep: #000000;
+            --black-soft: #1A1A1A;
+            --white-pure: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: var(--black-deep);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #B8860B 0%, #D4AF37 100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: white;
+        }
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-slide-up {
+            animation: slideUp 0.3s ease-out forwards;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E5E7EB;
+            border-radius: 10px;
+        }
+
+        /* Dark Theme Styles (Black & Gold) */
+        .theme-dark {
+            background-color: var(--black-deep) !important;
+            color: var(--white-pure) !important;
+        }
+        .theme-dark .bg-white {
+            background-color: var(--black-soft) !important;
+            border-color: #333333 !important;
+        }
+        .theme-dark .text-gray-900 { color: var(--gold-primary) !important; }
+        .theme-dark .text-gray-700 { color: #E5E5E5 !important; }
+        .theme-dark .text-gray-600 { color: #A3A3A3 !important; }
+        .theme-dark .text-gray-500 { color: #737373 !important; }
+        .theme-dark .text-gray-400 { color: #525252 !important; }
+        .theme-dark .border-gray-100, 
+        .theme-dark .border-gray-50 { border-color: #262626 !important; }
+        .theme-dark .bg-gray-50, 
+        .theme-dark .bg-gray-100 { background-color: #111111 !important; }
+        .theme-dark aside { background-color: var(--black-soft) !important; border-color: #262626 !important; }
+        .theme-dark header { background-color: rgba(0, 0, 0, 0.8) !important; border-color: #262626 !important; }
+        .theme-dark input, .theme-dark select { background-color: var(--black-deep) !important; color: white !important; border-color: #262626 !important; }
+        .theme-dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #404040 !important; }
+        .theme-dark .text-blue-600, .theme-dark .text-purple-600 { color: var(--gold-primary) !important; }
+        .theme-dark .bg-blue-50, .theme-dark .bg-purple-50 { background-color: rgba(212, 175, 55, 0.1) !important; color: var(--gold-primary) !important; }
+
+        /* Mixed Theme Styles (Black Sidebar, White/Gold Content) */
+        .theme-mixed aside {
+            background-color: var(--black-deep) !important;
+            color: var(--white-pure) !important;
+            border-right: 1px solid #262626 !important;
+        }
+        .theme-mixed aside h1, .theme-mixed aside p, .theme-mixed aside span:not(.text-white) {
+            color: var(--gold-primary) !important;
+        }
+        .theme-mixed aside .bg-gray-50 { background-color: var(--black-soft) !important; }
+        .theme-mixed aside .text-gray-500 { color: #A3A3A3 !important; }
+        .theme-mixed aside .text-gray-400 { color: #737373 !important; }
+        .theme-mixed aside .hover\:bg-gray-50:hover { background-color: var(--black-soft) !important; }
+        .theme-mixed aside .hover\:text-gray-900:hover { color: var(--gold-primary) !important; }
+        
+        /* General Accent Overrides */
+        .bg-blue-600, .bg-blue-500 { background-color: var(--gold-dark) !important; }
+        .text-blue-600 { color: var(--gold-dark) !important; }
+        .border-blue-500 { border-color: var(--gold-primary) !important; }
+        .shadow-blue-500\/25 { shadow-color: rgba(212, 175, 55, 0.25) !important; }
+        .shadow-blue-500\/20 { shadow-color: rgba(212, 175, 55, 0.20) !important; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "recharts": "https://esm.sh/recharts@^3.7.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
