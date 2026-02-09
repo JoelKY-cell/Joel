@@ -18,7 +18,7 @@ export const DashboardHome: React.FC = () => {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-semibold text-gray-900">Bonjour, Admin 👋</h1>
+        <h1 className="text-2xl font-semibold text-gray-900">Bonjour, Admin </h1>
         <p className="text-gray-500">Aujourd'hui, nous sommes le mardi 24 octobre 2023.</p>
       </div>
 

@@ -105,14 +105,14 @@ const App: React.FC = () => {
         <div className={`flex items-center mb-12 ${isSidebarCollapsed ? 'flex-col gap-4' : 'justify-between px-1'}`}>
           <div className={`flex items-center gap-3 group cursor-pointer`} onClick={() => setPage('dashboard')}>
             <div className="w-11 h-11 btn-gradient rounded-xl flex items-center justify-center text-white shadow-xl shadow-amber-500/20 group-hover:scale-105 transition-transform flex-shrink-0">
-              <span className="font-black text-xl">C</span>
+              <span className="font-black text-xl">T</span>
             </div>
             {!isSidebarCollapsed && (
               <div className="animate-in fade-in duration-500 slide-in-from-left-2">
-                <h1 className="text-lg font-black tracking-tighter text-gray-900 leading-none">ControlHub</h1>
+                <h1 className="text-lg font-black tracking-tighter text-gray-900 leading-none">TANGA GROUP</h1>
                 <div className="flex items-center gap-1.5 mt-1">
                   <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
-                  <span className="text-[9px] font-black text-gray-400 uppercase tracking-[0.1em]">Cloud Sync</span>
+                  <span className="text-[9px] font-black text-gray-400 uppercase tracking-[0.1em]">Système complet</span>
                 </div>
               </div>
             )}
@@ -178,9 +178,9 @@ const App: React.FC = () => {
                  className="bg-transparent text-xs font-bold text-gray-700 outline-none cursor-pointer"
                >
                  <option>Tous les sites</option>
-                 <option>Paris HQ</option>
-                 <option>Lyon Tech</option>
-                 <option>Bordeaux South</option>
+                 <option>Wemtenga</option>
+                 <option>Patte D'oie</option>
+                 <option>Ouaga 2000</option>
                </select>
             </div>
           </div>

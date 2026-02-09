@@ -5,6 +5,7 @@ import { Button, Card } from '../components/Shared';
 
 export const LoginPage: React.FC<{ onLogin: () => void, onBack: () => void }> = ({ onLogin, onBack }) => {
   const [showPassword, setShowPassword] = useState(false);
+  const [loginMethod, setLoginMethod] = useState<'email' | 'whatsapp'>('email');
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
@@ -17,10 +18,10 @@ export const LoginPage: React.FC<{ onLogin: () => void, onBack: () => void }> = 
       <div className="w-full max-w-md animate-slide-up">
         <div className="text-center mb-10">
           <div className="w-16 h-16 btn-gradient rounded-2xl flex items-center justify-center text-white mx-auto shadow-xl mb-6">
-            <span className="font-bold text-3xl">C</span>
+            <span className="font-bold text-3xl">T</span>
           </div>
           <h1 className="text-2xl font-bold text-gray-900">Content de vous revoir</h1>
-          <p className="text-gray-500 mt-2">Accédez à votre console ControlHub</p>
+          <p className="text-gray-500 mt-2">Accédez à votre espace TANGA GROUP</p>
         </div>
 
         <Card className="p-8 shadow-2xl bg-white/80 backdrop-blur-xl border-white">
@@ -64,11 +65,45 @@ export const LoginPage: React.FC<{ onLogin: () => void, onBack: () => void }> = 
             <Button className="w-full py-4 text-lg font-bold shadow-lg" onClick={onLogin}>
               Se connecter
             </Button>
+
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-200"></div>
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-white px-2 text-gray-500">Ou continuer avec</span>
+              </div>
+            </div>
+
+            <div className="flex gap-2">
+              <button
+                type="button"
+                onClick={() => setLoginMethod('email')}
+                className={`flex-1 py-2.5 px-4 rounded-lg font-semibold text-sm transition-all ${
+                  loginMethod === 'email'
+                    ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                📧 Email
+              </button>
+              <button
+                type="button"
+                onClick={() => setLoginMethod('whatsapp')}
+                className={`flex-1 py-2.5 px-4 rounded-lg font-semibold text-sm transition-all ${
+                  loginMethod === 'whatsapp'
+                    ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                💬 WhatsApp
+              </button>
+            </div>
           </form>
         </Card>
 
         <p className="text-center text-gray-500 mt-8 text-sm">
-          Pas encore de compte ? <a href="#" className="font-bold text-blue-600 hover:underline">Acheter un boîtier</a>
+          Pas encore de compte ? <a href="#" className="font-bold text-blue-600 hover:underline">Inscrivez-vous</a>
         </p>
       </div>
     </div>

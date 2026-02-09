@@ -10,9 +10,9 @@ export const LandingPage: React.FC<{ onStart: () => void, onLogin: () => void }>
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 px-6 lg:px-12 h-20 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 btn-gradient rounded-xl flex items-center justify-center text-white shadow-lg">
-            <span className="font-bold text-xl">C</span>
+            <span className="font-bold text-xl">T</span>
           </div>
-          <h1 className="text-xl font-bold text-gray-900 tracking-tight">ControlHub</h1>
+          <h1 className="text-xl font-bold text-gray-900 tracking-tight">TANGA GROUP</h1>
         </div>
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
           <a href="#features" className="hover:text-blue-600 transition-colors">Fonctionnalités</a>
@@ -125,9 +125,9 @@ export const LandingPage: React.FC<{ onStart: () => void, onLogin: () => void }>
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 btn-gradient rounded-xl flex items-center justify-center text-white">
-                <span className="font-bold text-xl">C</span>
+                <span className="font-bold text-xl">T</span>
               </div>
-              <h1 className="text-xl font-bold">ControlHub</h1>
+              <h1 className="text-xl font-bold">TANGA GROUP</h1>
             </div>
             <p className="text-gray-400 text-sm">Le futur de la gestion physique de votre entreprise est ici.</p>
           </div>
@@ -157,7 +157,7 @@ export const LandingPage: React.FC<{ onStart: () => void, onLogin: () => void }>
           </div>
         </div>
         <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
-          © 2023 ControlHub Inc. Tous droits réservés.
+          © 2026 TANGA GROUP. Tous droits réservés.
         </div>
       </footer>
     </div>
